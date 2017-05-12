@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+      $(window).load(function() {
+        var hash = window.location.hash;
+        var name;
+        if (hash.length > 1) {
+          name = unescape(hash.substring(1));
+        } else {
+          name = "guest";
+        }
+        var message = "Welcome, <strong></strong>!";
+        $('#welcome_message').html(message);
+        $('strong').text(name)
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Test page</h1>
+    <p id="welcome_message"></p>
+  </body>
+</html>
